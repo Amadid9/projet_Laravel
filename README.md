@@ -19,6 +19,8 @@ composer require laravel/breeze --dev
 php artisan breeze:install
 npm install && npm run dev
 php artisan migrate
+![image](https://github.com/user-attachments/assets/69c69c65-b715-47bf-998e-3695d2cda6de)
+![image](https://github.com/user-attachments/assets/709af7c3-fb88-46c9-af86-e9e2feef5a63)
 
 REMARQUE : 
 Pourquoi utiliser Node.js avec Breeze ?
@@ -35,6 +37,8 @@ apres cela , les fichiers breeze sont instaler (controllers +modele user ,et les
 il faut d'abord cree une base de donner dans le phpmyadmin et ecrire le nom de la base de donnees
 dans .env dans votre project laravel: 
 DB_DATABASE=appcrud
+![image](https://github.com/user-attachments/assets/3e79c42a-48db-451f-b3fa-36442869aa6d)
+
 
 ## 4.migration :
 pour cree les tables dans la base de donnees il faut cree des models et de migration on utilisant ce code la :
@@ -44,6 +48,10 @@ php artisan make:model Project -m
 php artisan make:model Skill -m
 
 et laravel par defaut cree des models avec des migration ,les migrations contient les tables avec le nom de table en pluriel 
+![image](https://github.com/user-attachments/assets/48c0c6ec-d0d2-45fe-a885-a85baa3e09fc)
+![image](https://github.com/user-attachments/assets/34949ecf-198c-427b-8b3e-4b6976383b09)
+
+
 , il faut les remplir , et on a les remplit on usant le code source fornit par le prof. 
 il faut ajouter ce code la : php artisan migrate , pour que les tables seront cree !! 
 
@@ -62,4 +70,7 @@ on remplit c'est controlleur selon nos besoin ( recuperation de donnee , creatio
 et passant maintenant au views , concernant les fichier d'authentification , il sont tout cree avec des layout et coposents,
 il faut just cree 2 docier , un de projet qui contient les fichier de creation et d'affichage , l'autre qui contient les skills
 leur creation , et on ajout un fichier publicprofile pour qu'on affiche le profile avec ses projets et competences on
-permettant de cree un cv ,cela neccessite l'installation du dompdf . 
+permettant de cree un cv ,cela neccessite l'installation du dompdf .
+![image](https://github.com/user-attachments/assets/c725722c-e714-4741-b045-058a4137ae94)
+![image](https://github.com/user-attachments/assets/36bee9e3-9860-4d5f-98ed-34bf275eb022)
+
