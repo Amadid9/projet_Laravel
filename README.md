@@ -1,61 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# expliquation d’installation et d’utilisation.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ce document explique comment créer un projet Laravel simple avec :
+- Authentification via Laravel Breeze
+- Migration des tables users, skills et projects.
+- Création des contrôleurs
+- Création des vues basiques
 
-## About Laravel
+## 1. Création du projet Laravel
+ DANS LE CMD ECRIRE :
+composer create-project laravel/laravel (le nom de projet que vous voullez )
+cd dev (parexemple ) .
+et vous ouvrant dans vs-code le projet ,voici sa structure :
+![image](https://github.com/user-attachments/assets/1a962687-7d71-4f66-8745-33e1df38ca6d)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 2. instalation du breeze :
+DANS LE CMD APRES QQUE VOUS ACCEDER AUX PROJET ECRIRE :
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install && npm run dev
+php artisan migrate
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+REMARQUE : 
+Pourquoi utiliser Node.js avec Breeze ?
+Laravel Breeze installe une partie frontend moderne basée sur Tailwind CSS et 
+souvent sur JavaScript (parfois avec Alpine.js ou React/Vue selon la version).
+Pour compiler les fichiers CSS et JS, Laravel utilise Laravel Mix (basé sur Webpack) 
+ou Vite (dans les versions plus récentes).
+Ces outils de build (compilation) sont exécutés via Node.js car ils utilisent l’écosystème
+JavaScript (npm, yarn) pour transformer, optimiser et bundler les fichiers CSS/JS.
+Par exemple, Tailwind CSS a besoin d’être compilé pour générer le CSS final optimisé à partir de ses classes utilitaires.
+apres cela , les fichiers breeze sont instaler (controllers +modele user ,et les vue profiles).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 3. Création du base de donnees:
+il faut d'abord cree une base de donner dans le phpmyadmin et ecrire le nom de la base de donnees
+dans .env dans votre project laravel: 
+DB_DATABASE=appcrud
 
-## Learning Laravel
+## 4.migration :
+pour cree les tables dans la base de donnees il faut cree des models et de migration on utilisant ce code la :
+php artisan make:model (nom que vous vouler donnes au modele) -m,pour notre exemple c'est :
+php artisan make:model User -m
+php artisan make:model Project -m
+php artisan make:model Skill -m
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+et laravel par defaut cree des models avec des migration ,les migrations contient les tables avec le nom de table en pluriel 
+, il faut les remplir , et on a les remplit on usant le code source fornit par le prof. 
+il faut ajouter ce code la : php artisan migrate , pour que les tables seront cree !! 
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 5.creation de controllers  :
+apres cela on passe a cree les controlleur avec la requette suivante :
+php artisan make:controller (nom de controlleur ) , et pour notre cas on ecrit ! :
+controlleur  php artisan make:controller ProjectController --resource
+php artisan make:controller SkillController --resource
+php artisan make:controller PDFController
+php artisan make:controller PublicProfileController
+php artisan make:controller ProfileController 
+on remplit c'est controlleur selon nos besoin ( recuperation de donnee , creation , modification , ou supression) 
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 6.creation de vues  :
+et passant maintenant au views , concernant les fichier d'authentification , il sont tout cree avec des layout et coposents,
+il faut just cree 2 docier , un de projet qui contient les fichier de creation et d'affichage , l'autre qui contient les skills
+leur creation , et on ajout un fichier publicprofile pour qu'on affiche le profile avec ses projets et competences on
+permettant de cree un cv ,cela neccessite l'installation du dompdf . 
