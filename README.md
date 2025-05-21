@@ -75,19 +75,32 @@ permettant de cree un cv ,cela neccessite l'installation du dompdf .
 ![image](https://github.com/user-attachments/assets/36bee9e3-9860-4d5f-98ed-34bf275eb022)
 
 demo :
-##page acceuil :
+## page acceuil :
+
+
 ![image](https://github.com/user-attachments/assets/ec0c8516-b99b-48f4-aedc-5fcc90183094)
+
+
 ## page de registration :
 ![image](https://github.com/user-attachments/assets/390cf444-f91a-461e-8895-7163f63800ee)
-##dashboard :
+
+## dashboard :
 ![image](https://github.com/user-attachments/assets/a0769304-d801-4326-8273-20698727d191)
-##projet :
+
+## projet :
+
 ![image](https://github.com/user-attachments/assets/9279277b-d255-49d5-a1ac-58c40c003b7c)
-##competences :
+
+## competences :
+
 ![image](https://github.com/user-attachments/assets/52561e4c-5df4-4914-aede-bf03cdec396d)
-##profile public :
+
+## profile public :
+
 ![image](https://github.com/user-attachments/assets/b3ae311a-943e-454a-b948-4c04580e9c38)
-##exemple de cv :
+
+## exemple de cv :
+
 ![image](https://github.com/user-attachments/assets/101ab72c-0f12-49ad-9eda-0e90876eee1b)
 
 
